@@ -2,19 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/Text.png" type="image/x-icon">
     <title>Encriptador de Texto</title>
 </head>
 <body>
-    <div class="navBar">
-        <img src="assets/Logo.png" alt="Logo Alura">
-    </div>
-    <div>
-        <textarea id="texto" placeholder="Ingrese su mensaje aqui"></textarea><br />
-        <button onclick="encriptar()">Encriptar</button>
-        <button>Desencriptar</button> <!-- No implementado -->
-    </div>
-    <div class="resultado">
-        <img src="assets/Muñeco.png" alt="">
+    <div class="contenedor">
+        <img src="assets/Logo.png" alt="Logo Alura" class="logo">
+        <div class="textarea-botones">
+            <textarea id="texto" placeholder="Ingrese su mensaje aqui"></textarea><br />
+            <div class="botones">
+                <div>
+                    <p><img src="assets/Alert.png" alt="">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <button onclick="encriptar()" class="encriptador">Encriptar</button>
+                <button class="desencriptador">Desencriptar</button> <!-- No implementado -->
+            </div>
+        </div>
+        <div class="resultado">
+            <img src="assets/Muñeco.png" alt="Muñeco-Alura">
+        </div>
     </div>
 </body>
 
