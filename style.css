@@ -1,6 +1,8 @@
 body {
     background-color: #EFF1FA;
     font-family: "Raleway", sans-serif;
+    color: #0A3871;
+    margin: 0;
 }
 
 .contenedor {
@@ -9,9 +11,9 @@ body {
 }
 
 .logo {
-    margin-top: 20px;
-    width: 75px;
-    height: 45px;
+    margin-top: 15px;
+    width: 70px;
+    height: 40px;
 }
 
 .textarea-botones {
@@ -33,7 +35,7 @@ body {
 .botones {
     align-items: left;
     text-align: left;
-    margin-top: 250px;
+    margin-top: 200px;
 }
 
 .botones img,
@@ -57,12 +59,12 @@ body {
     border-radius: 15px;
     width: 250px;
     height: 50px;
+    font-family: "Raleway", sans-serif;
 }
 
 .encriptador {
     background-color: #0A3871;
     color: white;
-    /* margin-right: 8px; */
 }
 
 .desencriptador {
@@ -71,8 +73,8 @@ body {
 
 .resultado {
     width: 450px;
-    height: 600px;
-    margin-top: 25px;
+    height: 570px;
+    margin-top: 15px;
     box-sizing: content-box;
     margin-right: 20px;
     border-radius: 30px;
@@ -81,5 +83,14 @@ body {
 }
 
 .resultado img {
-    margin-top: 80px;
+    margin-top: 50px;
+}
+
+.footer{
+    margin-top: 10px;
+    background-color: #0A3871;
+    text-align: center;
+    color: #EFF1FA;
+    height:  46px;
+    padding: 3px;
 }

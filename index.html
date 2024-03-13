@@ -1,12 +1,70 @@
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/Text.png" type="image/x-icon">
     <title>Encriptador de Texto</title>
 </head>
+<script>
+    function encriptarTexto(texto) {
+        texto = texto.replace(/e/g, 'enter');
+        texto = texto.replace(/i/g, 'imes');
+        texto = texto.replace(/a/g, 'ai');
+        texto = texto.replace(/o/g, 'ober');
+        texto = texto.replace(/u/g, 'ufat');
+
+        return texto;
+    }
+
+    function desencriptarTexto(textoEncriptado) {
+        textoEncriptado = textoEncriptado.replace(/enter/g, 'e');
+        textoEncriptado = textoEncriptado.replace(/imes/g, 'i');
+        textoEncriptado = textoEncriptado.replace(/ai/g, 'a');
+        textoEncriptado = textoEncriptado.replace(/ober/g, 'o');
+        textoEncriptado = textoEncriptado.replace(/ufat/g, 'u');
+
+        return textoEncriptado;
+    }
+
+    function encriptarMensaje() {
+        var texto = document.getElementById("texto").value;
+        var textoEncriptado = encriptarTexto(texto);
+        document.getElementById("textoEncriptado").innerText = textoEncriptado;
+        mostrarTextoEncriptado();
+    }
+
+    function desencriptarMensaje() {
+        var textoEncriptado = document.getElementById("textoEncriptado").innerText;
+        var textoDesencriptado = desencriptarTexto(textoEncriptado);
+        document.getElementById("textoDesencriptado").innerText = textoDesencriptado;
+        mostrarTextoDesencriptado();
+    }
+
+    function mostrarTextoEncriptado() {
+        //Ocultar la imagen y el mensaje inicial
+        document.getElementById("imagenResultado").style.display = "none";
+        document.getElementById("mensajeInicial").style.display = "none";
+
+        //Mostrar el texto encriptado y ocultar el texto desencriptado
+        document.getElementById("textoEncriptado").style.display = "block";
+        document.getElementById("textoDesencriptado").style.display = "none";
+    }
+
+    function mostrarTextoDesencriptado() {
+        //Ocultar la imagen y el mensaje inicial
+        document.getElementById("imagenResultado").style.display = "none";
+        document.getElementById("mensajeInicial").style.display = "none";
+
+        //Mostrar el texto desencriptado y ocultar el texto encriptado
+        document.getElementById("textoDesencriptado").style.display = "block";
+        document.getElementById("textoEncriptado").style.display = "none";
+    }
+</script>
+
 <body>
     <div class="contenedor">
         <img src="assets/Logo.png" alt="Logo Alura" class="logo">
@@ -16,14 +74,21 @@
                 <div>
                     <p><img src="assets/Alert.png" alt="">Solo letras minúsculas y sin acentos</p>
                 </div>
-                <button onclick="encriptar()" class="encriptador">Encriptar</button>
-                <button class="desencriptador">Desencriptar</button> <!-- No implementado -->
+                <button onclick="encriptarMensaje()" class="encriptador">Encriptar</button>
+                <button onclick="desencriptarMensaje()" class="desencriptador">Desencriptar</button>
             </div>
         </div>
         <div class="resultado">
-            <img src="assets/Muñeco.png" alt="Muñeco-Alura">
+            <img src="assets/Muñeco.png" alt="Muñeco-Alura" id="imagenResultado">
+            <h2 id="textoEncriptado" style="display: none; margin-top: 250px;">Texto Encriptado</h2>
+            <h2 id="textoDesencriptado" style="display: none; margin-top: 250px;">Texto Desencriptado</h2>
+            <p id="mensajeInicial">Ingresa el texto que desees encriptar o desencriptar.</p>
         </div>
     </div>
+    <footer class="footer">
+        <p>&copy; Desarrollado por <a href="https://valentinojerez.vercel.app/" target="_blank"
+                rel="noopener noreferrer">Valentino Jerez</a> 2024</p>
+    </footer>
 </body>
 
 </html>
